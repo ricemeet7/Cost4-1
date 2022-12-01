@@ -31,7 +31,7 @@ $(function() {
     arrows: false,
     centerMode: true, //センターモード
     centerPadding: '5%', //前後のパディング　これによって左右端に見えるほかの画像の割合が決まる
-    autoplay: false, //オートプレイ
+    autoplay: true, //オートプレイ
     autoplaySpeed: 2000, //オートプレイの切り替わり時間
     slidesToScroll: 1,
     slidesToShow: 3, 

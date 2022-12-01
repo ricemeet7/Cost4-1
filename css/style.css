@@ -1,0 +1,405 @@
+* {
+  box-sizing: border-box;
+}
+
+body {}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 1.5;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  max-width: 1240px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/*--                           　      --*/
+/*--  top_headerハンバーガーメニュー  --*/
+/*--                                   --*/
+.top_header {
+  width: 100%;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 15;
+}
+
+.top_header .top_fixed_part {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  /* background-color: #fff; */
+}
+
+.top_header .logo {
+  width: 175px;
+  height: 40px;
+}
+
+.top_header .logo img {
+  width: 100%;
+}
+
+.top_header label {
+  cursor: pointer;
+}
+
+
+/*--       hum_close      --*/
+
+.top_header input {
+  position: relative;
+  top: -100px;
+  /*チェックボックスを画面外に出している*/
+  position: absolute;
+}
+
+.top_header label {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  position: relative;
+  margin-top: 9px;
+  cursor: pointer;
+}
+
+.top_header span {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #121212;
+  position: absolute;
+  left: 0;
+  transition: all .5s;
+}
+
+.top_header .line1 {
+  top: 0;
+}
+
+.top_header .line2 {
+  top: 10px;
+}
+
+.top_header .line3 {
+  bottom: 0;
+}
+
+
+/*      hum_open      */
+
+#checkbox:checked~.line1 {
+  transform: translateY(10px) rotate(-315deg);
+  background-color: #fff;
+  z-index: 30;
+}
+
+#checkbox:checked~.line2 {
+  opacity: 0;
+  z-index: 30;
+}
+
+#checkbox:checked~.line3 {
+  transform: translateY(-10px) rotate(315deg);
+  background-color: #fff;
+  z-index: 30;
+}
+
+/*--                   --*/
+/*--    hidden_menu    --*/
+/*--                   --*/
+
+#hidden_menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 20;
+}
+
+#mask {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #121212;
+  opacity: .8;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: none;
+  /*ここをJSで'block'に切り替える*/
+  /* display: block; */
+}
+
+#menu_part {
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  padding: 60px 25px;
+  top: 0;
+  left: -300px;
+  /*ここをJSで'0'に切り替える*/
+  /* left: 0; */
+  transition: .7s all;
+  z-index: 20;
+  background-color: #121212;
+}
+
+.hidden_menu .nav li {
+  padding: 20px 0;
+  border-top: 1px solid #fff;
+}
+
+.hidden_menu .nav li:last-child {
+  border-bottom: 1px solid #fff;
+}
+
+.hidden_menu .menu_part a {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.hidden_menu .sns {
+  margin-top: 60px;
+}
+
+.hidden_menu .sns li {
+  padding: 5px 0;
+}
+
+/*--                       --*/
+/*--      top_visual       --*/
+/*--                       --*/
+.top_visual {
+  /* width: 100vw; */
+}
+
+.top_visual video {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+/*--------------------------- 
+　　　  pickup
+----------------------------*/
+.pickup {
+  padding-top: 100px;
+}
+
+.pickup figure {
+  /* width: 22.5vw; */
+  /* aspect-ratio: 1.5 / 1; */
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.pickup img {
+  width: 100%;
+}
+
+/*--------------------------- 
+　　　  feature
+----------------------------*/
+.feature h2 {
+  margin-top: 100px;
+}
+
+.feature .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 26px;
+  padding-bottom: 60px;
+}
+
+.feature .item_wrapper {
+  box-shadow: 0 0 8px 5px #00000029;
+}
+
+.feature img {
+  width: 100%;
+}
+
+.feature .box {
+  padding: 30px;
+}
+
+.feature .ttl,
+.feature .date {
+  font-size: 0.75rem;
+  line-height: 1.275;
+}
+
+.feature .text {
+  font-size: 0.9rem;
+  line-height: 1.53;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.feature .date {
+  text-align: right;
+  margin-top: 33px;
+}
+
+/*--      fade_in      --*/
+.fade_in {
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all .5s;
+}
+
+/* jsでこのクラスを追加 */
+.scroll_in {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+/*--------------------------- 
+　　　  footer
+----------------------------*/
+.contact {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  background-color: #121212;
+  font-size: 0.9rem;
+  line-height: 1.3125;
+}
+
+.contact h2 {
+  color: #fff;
+}
+
+.contact .container {
+  display: flex;
+  gap: 10.7615%;
+  /* width: 44.62%; */
+}
+
+.contact .text_box {
+  width: 100%;
+}
+
+.contact .text_box p {
+  color: #fff;
+}
+
+.contact .text_box .text1,
+.contact .text_box .text2 {
+  margin-top: 30px;
+}
+
+/*-- form_box --*/
+.contact .form_box {
+  color: #fff;
+  width: 100%;
+}
+
+.contact .form_box label {
+  display: block;
+}
+
+.contact #name,
+.contact #mail {
+  margin-bottom: 19px;
+  height: 44px;
+  width: 100%;
+}
+
+.contact .textarea {
+  width: 100%;
+  height: 68px;
+}
+
+.contact .form_box .submit {
+  display: inline-block;
+  margin-top: 24px;
+  background-color: #121212;
+  border: 1px solid #fff;
+  color: #fff;
+  width: 200px;
+  height: 45px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.contact .form_box .submit:hover {
+  background-color: #fff;
+  color: #121212;
+}
+
+
+.contact .copyright {
+  margin-top: 60px;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.125;
+  text-align: center;
+}
+
+/*--------------------------- 
+　　　  レスポンシブ(max-width:1002)
+----------------------------*/
+@media screen and (max-width:1002px) {
+
+  /*--------------------------- 
+  　　　  feature
+  ----------------------------*/
+  .feature .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*--------------------------- 
+　　　  レスポンシブ(max-width:676)
+----------------------------*/
+@media screen and (max-width:676px) {
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.67;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /*--------------------------- 
+　　　  feature
+----------------------------*/
+  .feature .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*--------------------------- 
+　　　  レスポンシブ(max-width:600)
+----------------------------*/
+/*--------------------------- 
+　　　  footer
+----------------------------*/
+@media screen and (max-width:600px) {
+  .contact .container {
+    display: block;
+  }
+
+  .contact .form_box {
+    margin-top: 30px;
+  }
+
+  .contact .form_box .submit {
+    width: 100%;
+  }
+
+  .contact .copyright {
+    margin-top: 80px;
+  }
+}
